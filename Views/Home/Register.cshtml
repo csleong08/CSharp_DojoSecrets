@@ -1,0 +1,33 @@
+﻿<div class="register">
+    <h3>New User Registration: </h3>
+    @model UsersValidate
+    <form asp-action="AddUser" asp-controller="Home" method="post">
+        <span style="color:red" asp-validation-for="first_name"></span>
+        <p>
+            <label asp-for="first_name">First Name: </label>
+            <input type='text' asp-for='first_name'>
+        </p>
+        <span style="color:red" asp-validation-for="last_name"></span>
+        <p>
+            <label asp-for="last_name">Last Name: </label>
+            <input type='text' asp-for='last_name'>
+        </p>
+        <span style="color:red" asp-validation-for="email">@TempData["uniqueemail"]</span>
+        <p>
+            <label asp-for="email">Email: </label>
+            
+            <input type='text' asp-for='email'>
+        </p>
+        <span style="color:red" asp-validation-for="password"></span>
+        <p>
+            <label asp-for="password">Password: </label>
+            <input type='password' asp-for='password'>
+        </p>
+        <span style="color:red" asp-validation-for="passconfirm"></span>
+        <p>
+            <label asp-for="passconfirm">Confirm Password: </label>
+            <input type='password' asp-for='passconfirm'>
+        </p>
+        <p><button type='submit' class="btn btn-primary">Submit</button></p>
+    </form>
+</div>
